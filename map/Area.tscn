@@ -1,0 +1,94 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://map/Area.gd" type="Script" id=1]
+[ext_resource path="res://interactable/Resource.tscn" type="PackedScene" id=2]
+[ext_resource path="res://bin/pics/dirtbg.png" type="Texture" id=3]
+[ext_resource path="res://bin/pics/16x16 Outdoors Tileset/Outdoors_22.png" type="Texture" id=4]
+[ext_resource path="res://bin/pics/16x16 Outdoors Tileset/Outdoors_19.png" type="Texture" id=5]
+[ext_resource path="res://bin/pics/16x16 Outdoors Tileset/Outdoors_25.png" type="Texture" id=6]
+[ext_resource path="res://bin/pics/16x16 Outdoors Tileset/Outdoors_21.png" type="Texture" id=7]
+[ext_resource path="res://bin/pics/16x16 Outdoors Tileset/Outdoors_23.png" type="Texture" id=8]
+[ext_resource path="res://interactable/NPC.tscn" type="PackedScene" id=9]
+[ext_resource path="res://bin/pics/bigtree.png" type="Texture" id=10]
+[ext_resource path="res://bin/pics/allgrass2.png" type="Texture" id=11]
+
+[sub_resource type="TileSet" id=1]
+0/name = "allgrass2.png 0"
+0/texture = ExtResource( 11 )
+0/tex_offset = Vector2( 0, 0 )
+0/modulate = Color( 1, 1, 1, 1 )
+0/region = Rect2( 4, -10, 527, 542 )
+0/tile_mode = 0
+0/occluder_offset = Vector2( 0, 0 )
+0/navigation_offset = Vector2( 0, 0 )
+0/shapes = [  ]
+0/z_index = 0
+
+[node name="Area" type="Node2D"]
+z_index = -1
+script = ExtResource( 1 )
+Resource = ExtResource( 2 )
+
+[node name="Background" type="Sprite" parent="."]
+z_index = -1
+texture = ExtResource( 3 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 0, 0, 16384, 8192 )
+
+[node name="Path" type="Sprite" parent="."]
+texture = ExtResource( 4 )
+centered = false
+offset = Vector2( 0, 224 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 512, 32 )
+
+[node name="Path2" type="Sprite" parent="."]
+texture = ExtResource( 4 )
+centered = false
+offset = Vector2( 512, 0 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 32, 256 )
+
+[node name="PathTop" type="Sprite" parent="."]
+texture = ExtResource( 5 )
+centered = false
+offset = Vector2( 0, 208 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 512, 16 )
+
+[node name="PathBottom" type="Sprite" parent="."]
+texture = ExtResource( 6 )
+centered = false
+offset = Vector2( 0, 256 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 552, 16 )
+
+[node name="PathLeft" type="Sprite" parent="."]
+texture = ExtResource( 7 )
+centered = false
+offset = Vector2( 498, 0 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 16, 224 )
+
+[node name="PathRight" type="Sprite" parent="."]
+texture = ExtResource( 8 )
+centered = false
+offset = Vector2( 544, 0 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 16, 264 )
+
+[node name="NPC" parent="." instance=ExtResource( 9 )]
+position = Vector2( 8576, 4224 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 8384, 3904 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 10 )
+
+[node name="TileMap" type="TileMap" parent="."]
+scale = Vector2( 0.25, 0.25 )
+z_index = -1
+tile_set = SubResource( 1 )
+format = 1
+tile_data = PoolIntArray( 16187888, 0, 0, 16187896, 0, 0, 16187904, 0, 0, 16187912, 0, 0, 16187920, 0, 0, 16187928, 0, 0, 16712176, 0, 0, 16712184, 0, 0, 16712192, 0, 0, 16712200, 0, 0, 16712208, 0, 0, 16712216, 0, 0, 17236464, 0, 0, 17236472, 0, 0, 17236480, 0, 0, 17236488, 0, 0, 17236496, 0, 0, 17236504, 0, 0 )
